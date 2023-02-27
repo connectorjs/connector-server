@@ -1,2 +1,2 @@
-# TroyConnector Server
-Client socket management and Restful API service
+# ConnectorJS Server
+Manages socket clients and provides Restful API service

@@ -1,3 +1,9 @@
+*.code-workspace
+*!!__*
+* copy*
+*-lock.json
+test*.js
+
 # Logs
 logs
 *.log

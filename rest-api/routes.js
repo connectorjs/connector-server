@@ -14,7 +14,7 @@ module.exports =async (app) => {
   
   // catch 404 and forward to error handler
   app.use((req, res, next) => {
-    res.status(404).json({ success: false, error: { name: '404', message: 'function not found' } })
+    res.status(404).json({ success: false, error: { name: '404', message: 'function not found..' } })
   })
 
   app.use((err, req, res, next) => {

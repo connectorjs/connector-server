@@ -39,7 +39,7 @@ function clientControllers(app, route) {
         })
         .catch(err=>global.responseError(err, res))
     } else {
-      next()
+      res.status(404).json({ success: false, error: { name: '404', message: 'function not found.' } })
     }
 
   })
@@ -63,7 +63,7 @@ function clientPassport(req) {
               if (spamCheck(IP)) {
                 reject({ name: 'SPAM', message: `Your request was detected as spam. After 60 minutes, try again` })
               } else {
-                reject({ name: 'AUTH', message: `Authentication failed.` })
+                reject({ name: 'AUTH', message: `Connector Authentication failed.` })
               }
             } else {
               if (global.wss.socketListByClientId[connDoc.clientId]) {
@@ -80,7 +80,7 @@ function clientPassport(req) {
         if (spamCheck(IP)) {
           reject({ name: 'SPAM', message: `Your request was detected as spam. After 60 minutes, try again` })
         } else {
-          reject({ name: 'AUTH', message: `Authentication failed..` })
+          reject({ name: 'AUTH', message: `Connector Authentication failed.` })
         }
       }
     }
@@ -90,12 +90,14 @@ function clientPassport(req) {
 
 function getController(folder, funcName) {
   let controllerName = path.join(__dirname, folder, `generic-command.controller.js`)
-  if (['message', 'mssql', 'mysql', 'pg', 'read-excel', 'write-excel', 'read-file', 'write-file', 'datetime', 'cmd'].includes(funcName) == false)
+  if (['message', 'mssql', 'mysql', 'pg', 'read-excel', 'write-excel', 'read-file', 'write-file', 'datetime', 'cmd'].includes(funcName) == false){
     controllerName = path.join(__dirname, folder, `${funcName}.controller.js`)
+  }
+  console.log(`controllerName`, controllerName)
+
   if (fs.existsSync(controllerName) == false) {
     return null
   } else {
     return require(controllerName)
-
   }
 }

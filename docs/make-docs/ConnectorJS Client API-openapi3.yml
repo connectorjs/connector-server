@@ -51,9 +51,21 @@ info:
 
 
     Continue
-  version: v1
+  version: ''
+  x-logo:
+    url: >-
+      https://raw.githubusercontent.com/connectorjs/.github/main/images/connectorjs-logo.png
+    altText: logo
+    href: https://connectorjs.com
+  contact:
+    name: MiaJupiter Developer Team
+    url: https://connectorjs.com
+    email: contact@connectorjs.com
+  license:
+    name: MIT
+    url: https://choosealicense.com/licenses/mit
 servers:
-  - url: http://https://api.connectorjs.com/connector
+  - url: https://api.connectorjs.com/connector
 tags:
   - name: General
     description: General
@@ -77,52 +89,15 @@ paths:
           in: header
           schema:
             type: string
-          example: '{{client_id}}'
+          value: '{{client_id}}'
         - name: clientPass
           in: header
           schema:
             type: string
-          example: '{{client_pass}}'
+          value: '{{client_pass}}'
       responses:
         '200':
           description: OK
-          headers:
-            X-Powered-By:
-              schema:
-                type: string
-                example: Express
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-                example: '*'
-            Vary:
-              schema:
-                type: string
-                example: X-HTTP-Method-Override
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
-            Content-Length:
-              schema:
-                type: integer
-                example: '50'
-            ETag:
-              schema:
-                type: string
-                example: W/"32-I4hWVAMBw6c+nkITVx39fBXPE8Q"
-            Date:
-              schema:
-                type: string
-                example: Mon, 27 Feb 2023 20:16:00 GMT
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Keep-Alive:
-              schema:
-                type: string
-                example: timeout=5
           content:
             application/json:
               schema:
@@ -154,52 +129,15 @@ paths:
           in: header
           schema:
             type: string
-          example: '{{client_id}}'
+          value: '{{client_id}}'
         - name: clientPass
           in: header
           schema:
             type: string
-          example: '{{client_pass}}'
+          value: '{{client_pass}}'
       responses:
         '200':
           description: OK
-          headers:
-            X-Powered-By:
-              schema:
-                type: string
-                example: Express
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-                example: '*'
-            Vary:
-              schema:
-                type: string
-                example: X-HTTP-Method-Override
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
-            Content-Length:
-              schema:
-                type: integer
-                example: '1212'
-            ETag:
-              schema:
-                type: string
-                example: W/"4bc-pR+9DaSyVHH1c1qNQLUdDvsYxbY"
-            Date:
-              schema:
-                type: string
-                example: Mon, 27 Feb 2023 20:21:49 GMT
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Keep-Alive:
-              schema:
-                type: string
-                example: timeout=5
           content:
             application/json:
               schema:
@@ -243,52 +181,15 @@ paths:
           in: header
           schema:
             type: string
-          example: '{{client_id}}'
+          value: '{{client_id}}'
         - name: clientPass
           in: header
           schema:
             type: string
-          example: '{{client_pass}}'
+          value: '{{client_pass}}'
       responses:
         '200':
           description: OK
-          headers:
-            X-Powered-By:
-              schema:
-                type: string
-                example: Express
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-                example: '*'
-            Vary:
-              schema:
-                type: string
-                example: X-HTTP-Method-Override
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
-            Content-Length:
-              schema:
-                type: integer
-                example: '605'
-            ETag:
-              schema:
-                type: string
-                example: W/"25d-yeBAzEhJckSiSeRrZ3ObIxgvGHw"
-            Date:
-              schema:
-                type: string
-                example: Mon, 27 Feb 2023 19:52:10 GMT
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Keep-Alive:
-              schema:
-                type: string
-                example: timeout=5
           content:
             application/json:
               schema:
@@ -344,52 +245,15 @@ paths:
           in: header
           schema:
             type: string
-          example: '{{client_id}}'
+          value: '{{client_id}}'
         - name: clientPass
           in: header
           schema:
             type: string
-          example: '{{client_pass}}'
+          value: '{{client_pass}}'
       responses:
         '200':
           description: OK
-          headers:
-            X-Powered-By:
-              schema:
-                type: string
-                example: Express
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-                example: '*'
-            Vary:
-              schema:
-                type: string
-                example: X-HTTP-Method-Override
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
-            Content-Length:
-              schema:
-                type: integer
-                example: '477'
-            ETag:
-              schema:
-                type: string
-                example: W/"1dd-LTaKVNPDHbac0O5AM91AcpD4fps"
-            Date:
-              schema:
-                type: string
-                example: Mon, 27 Feb 2023 19:50:52 GMT
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Keep-Alive:
-              schema:
-                type: string
-                example: timeout=5
           content:
             application/json:
               schema:
@@ -441,52 +305,15 @@ paths:
           in: header
           schema:
             type: string
-          example: '{{client_id}}'
+          value: '{{client_id}}'
         - name: clientPass
           in: header
           schema:
             type: string
-          example: '{{client_pass}}'
+          value: '{{client_pass}}'
       responses:
         '200':
           description: OK
-          headers:
-            X-Powered-By:
-              schema:
-                type: string
-                example: Express
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-                example: '*'
-            Vary:
-              schema:
-                type: string
-                example: X-HTTP-Method-Override
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
-            Content-Length:
-              schema:
-                type: integer
-                example: '1505'
-            ETag:
-              schema:
-                type: string
-                example: W/"5e1-Pc7Yl7jNcfwM+oV9LUIjnqn9u2o"
-            Date:
-              schema:
-                type: string
-                example: Mon, 27 Feb 2023 19:53:57 GMT
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Keep-Alive:
-              schema:
-                type: string
-                example: timeout=5
           content:
             application/json:
               schema:
@@ -551,52 +378,15 @@ paths:
           in: header
           schema:
             type: string
-          example: '{{client_id}}'
+          value: '{{client_id}}'
         - name: clientPass
           in: header
           schema:
             type: string
-          example: '{{client_pass}}'
+          value: '{{client_pass}}'
       responses:
         '200':
           description: OK
-          headers:
-            X-Powered-By:
-              schema:
-                type: string
-                example: Express
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-                example: '*'
-            Vary:
-              schema:
-                type: string
-                example: X-HTTP-Method-Override
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
-            Content-Length:
-              schema:
-                type: integer
-                example: '122'
-            ETag:
-              schema:
-                type: string
-                example: W/"7a-oNHeVDU5rkPvlNdWzvunVxr65VY"
-            Date:
-              schema:
-                type: string
-                example: Mon, 27 Feb 2023 20:44:34 GMT
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Keep-Alive:
-              schema:
-                type: string
-                example: timeout=5
           content:
             application/json:
               schema:
@@ -626,52 +416,15 @@ paths:
           in: header
           schema:
             type: string
-          example: '{{client_id}}'
+          value: '{{client_id}}'
         - name: clientPass
           in: header
           schema:
             type: string
-          example: '{{client_pass}}'
+          value: '{{client_pass}}'
       responses:
         '200':
           description: OK
-          headers:
-            X-Powered-By:
-              schema:
-                type: string
-                example: Express
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-                example: '*'
-            Vary:
-              schema:
-                type: string
-                example: X-HTTP-Method-Override
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
-            Content-Length:
-              schema:
-                type: integer
-                example: '59'
-            ETag:
-              schema:
-                type: string
-                example: W/"3b-mIURcxqSDaycWcjhGVRc97qGNQY"
-            Date:
-              schema:
-                type: string
-                example: Mon, 27 Feb 2023 20:46:31 GMT
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Keep-Alive:
-              schema:
-                type: string
-                example: timeout=5
           content:
             application/json:
               schema:
@@ -697,52 +450,15 @@ paths:
           in: header
           schema:
             type: string
-          example: '{{client_id}}'
+          value: '{{client_id}}'
         - name: clientPass
           in: header
           schema:
             type: string
-          example: '{{client_pass}}'
+          value: '{{client_pass}}'
       responses:
         '200':
           description: OK
-          headers:
-            X-Powered-By:
-              schema:
-                type: string
-                example: Express
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-                example: '*'
-            Vary:
-              schema:
-                type: string
-                example: X-HTTP-Method-Override
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
-            Content-Length:
-              schema:
-                type: integer
-                example: '74'
-            ETag:
-              schema:
-                type: string
-                example: W/"4a-nZDhcDvnpe4XT2MHudq6OjPZgB8"
-            Date:
-              schema:
-                type: string
-                example: Mon, 27 Feb 2023 20:51:37 GMT
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Keep-Alive:
-              schema:
-                type: string
-                example: timeout=5
           content:
             application/json:
               schema:
@@ -780,52 +496,15 @@ paths:
           in: header
           schema:
             type: string
-          example: '{{client_id}}'
+          value: '{{client_id}}'
         - name: clientPass
           in: header
           schema:
             type: string
-          example: '{{client_pass}}'
+          value: '{{client_pass}}'
       responses:
         '200':
           description: OK
-          headers:
-            X-Powered-By:
-              schema:
-                type: string
-                example: Express
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-                example: '*'
-            Vary:
-              schema:
-                type: string
-                example: X-HTTP-Method-Override
-            Content-Type:
-              schema:
-                type: string
-                example: application/json; charset=utf-8
-            Content-Length:
-              schema:
-                type: integer
-                example: '50'
-            ETag:
-              schema:
-                type: string
-                example: W/"32-VjSc49h6U7vmQqWjA5aVWR/gdSk"
-            Date:
-              schema:
-                type: string
-                example: Mon, 27 Feb 2023 20:49:21 GMT
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Keep-Alive:
-              schema:
-                type: string
-                example: timeout=5
           content:
             application/json:
               schema:

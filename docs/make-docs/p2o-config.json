@@ -1,0 +1,40 @@
+{
+  "info": {
+    "version": "",
+    "xLogo":{
+      "url":"https://raw.githubusercontent.com/connectorjs/.github/main/images/connectorjs-logo.png", 
+      "11backgroundColor":"#2323A0", 
+      "altText":"logo",
+      "href":"https://connectorjs.com"
+    },
+    "license":{
+      "name": "MIT",
+      "url": "https://choosealicense.com/licenses/mit"
+    },
+    "contact":{
+      "name": "MiaJupiter Developer Team",
+      "url": "https://connectorjs.com",
+      "email":"contact@connectorjs.com"
+    }
+  },
+  "defaultTag": "general",
+  "pathDepth": 0,
+  "servers": [
+    {
+      "url": "https://api.connectorjs.com/connector"
+    }
+  ],
+  "externalDocs": {},
+  "folders": {},
+  "responseHeaders": false,
+  "replaceVars": true,
+  "additionalVars": {
+    "example":"value"
+  },
+  "outputFormat": "yaml",
+  "disabledParams": {
+    "includeQuery": false,
+    "includeHeader": false
+  },
+  "operationId": "off"
+}

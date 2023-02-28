@@ -3,7 +3,8 @@
   "version": "2.0.1",
   "description": "Manages socket clients and provides Restful API service",
   "scripts": {
-    "start": "nodemon connector-server.js"
+    "start": "nodemon connector-server.js",
+    "makedoc":"cd ./docs/make-docs & makedoc1.bat & makedoc2.bat & makedoc3.bat"
   },
   "repository": {
     "type": "git",

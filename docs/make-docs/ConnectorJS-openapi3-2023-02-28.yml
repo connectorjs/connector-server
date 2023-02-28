@@ -1,0 +1,835 @@
+openapi: 3.0.0
+info:
+  title: ConnectorJS Client API
+  description: >-
+    ## Introduction
+
+    Download & install this connector to reach to your pc/server over
+    ConnectorJS Restful Services.
+
+
+    ## Supported Data Systems
+
+    - SQL Server
+
+    - MySQL
+
+    - PostgreSQL
+
+    - Excel
+
+    - File System
+
+    - Linux Shell
+
+    - Windows Command Prompt
+
+
+    ## Download & Install
+
+    Download [ClientConnector (for
+    Windows)](https://github.com/connectorjs/connector-server) client connector
+    application.
+
+    Unpack zip file and run `connectorjs_setup.exe`
+
+
+    Setup needs administration privileges to install properly.
+
+
+    ## clientId & clientPass
+
+    When the connector runs first time, it takes new id and password from
+    ConnectorJS Server. You need them for authentication.
+
+
+
+    ## Structure
+
+
+    ![](https://github.com/connectorjs/connector-server/raw/main/docs/clientconnector-structure.svg)
+
+
+    Continue
+  version: v1
+servers:
+  - url: http://https://api.connectorjs.com/connector
+tags:
+  - name: General
+    description: General
+  - name: SQL
+    description: SQL
+  - name: File System
+    description: File System
+  - name: Excel
+    description: Excel
+paths:
+  /datetime:
+    post:
+      tags:
+        - General
+      summary: datetime
+      description: Get date & time (UTC) from ConnectorJS Client
+      requestBody:
+        content: {}
+      parameters:
+        - name: clientId
+          in: header
+          schema:
+            type: string
+          example: '{{client_id}}'
+        - name: clientPass
+          in: header
+          schema:
+            type: string
+          example: '{{client_pass}}'
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Vary:
+              schema:
+                type: string
+                example: X-HTTP-Method-Override
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '50'
+            ETag:
+              schema:
+                type: string
+                example: W/"32-I4hWVAMBw6c+nkITVx39fBXPE8Q"
+            Date:
+              schema:
+                type: string
+                example: Mon, 27 Feb 2023 20:16:00 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                success: true
+                data: '2023-02-27T20:16:00.528Z'
+  /cmd:
+    post:
+      tags:
+        - General
+      summary: cmd
+      description: |-
+        Run terminal commands on computer which installed ConnectorJS Client.
+
+        Supported OS:
+        - Win32
+        - MacOS
+        - Linux
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                command: dir C:\
+      parameters:
+        - name: clientId
+          in: header
+          schema:
+            type: string
+          example: '{{client_id}}'
+        - name: clientPass
+          in: header
+          schema:
+            type: string
+          example: '{{client_pass}}'
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Vary:
+              schema:
+                type: string
+                example: X-HTTP-Method-Override
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '1212'
+            ETag:
+              schema:
+                type: string
+                example: W/"4bc-pR+9DaSyVHH1c1qNQLUdDvsYxbY"
+            Date:
+              schema:
+                type: string
+                example: Mon, 27 Feb 2023 20:21:49 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                success: true
+                data: " Volume in drive C has no label.\r\n Volume Serial Number is A4EE-0827\r\n\r\n Directory of C:\\\r\n\r\n02/21/2023  04:03 PM    <DIR>          appsdocs\r\n10/19/2022  07:52 PM           112,104 appverifUI.dll\r\n02/21/2023  04:04 PM    <DIR>          arge\r\n07/14/2022  07:26 PM    <DIR>          gradle-7.5\r\n01/07/2023  12:19 AM    <DIR>          inetpub\r\n02/23/2023  06:10 AM    <DIR>          Intel\r\n04/28/2022  08:49 PM    <DIR>          mongoDatabases\r\n02/27/2023  10:50 PM    <DIR>          portable_programs\r\n02/21/2023  04:14 PM    <DIR>          Program Files\r\n12/18/2022  03:21 PM    <DIR>          Program Files (x86)\r\n04/28/2022  09:20 PM    <DIR>          SQLData\r\n12/05/2022  11:54 AM    <DIR>          src\r\n02/27/2023  08:31 PM    <DIR>          temp\r\n02/04/2023  04:01 AM    <DIR>          Users\r\n05/30/2022  11:37 AM    <DIR>          Uyap\r\n10/19/2022  07:52 PM            66,176 vfcompat.dll\r\n01/01/2023  08:42 PM    <DIR>          vm\r\n07/07/2022  05:37 PM    <DIR>          wamp64\r\n02/22/2023  08:12 AM    <DIR>          Windows\r\n               2 File(s)        178,280 bytes\r\n              17 Dir(s)  144,244,936,704 bytes free\r\n"
+  /mssql:
+    post:
+      tags:
+        - SQL
+      summary: mssql
+      description: |-
+        Control `MS SQL Server` via ConnectorJS Client.
+
+        For more information, look at https://www.npmjs.com/package/mssql
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                config:
+                  user: sa
+                  password: '{{mssql_password}}'
+                  database: '{{mssql_database}}'
+                  server: localhost
+                  port: 1434
+                  dialect: mssql
+                  dialectOptions:
+                    instanceName: SQL2019
+                  options:
+                    encrypt: false
+                    trustServerCertificate: false
+                query: >-
+                  SELECT TOP (2)
+                  [BANFISTAR],[BANFISHESADI],[BANFISBORCTOP],[BANFISALACAKTOP]
+                  FROM [BANKAFIS]
+      parameters:
+        - name: clientId
+          in: header
+          schema:
+            type: string
+          example: '{{client_id}}'
+        - name: clientPass
+          in: header
+          schema:
+            type: string
+          example: '{{client_pass}}'
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Vary:
+              schema:
+                type: string
+                example: X-HTTP-Method-Override
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '605'
+            ETag:
+              schema:
+                type: string
+                example: W/"25d-yeBAzEhJckSiSeRrZ3ObIxgvGHw"
+            Date:
+              schema:
+                type: string
+                example: Mon, 27 Feb 2023 19:52:10 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                success: true
+                data:
+                  recordsets:
+                    - - BANFISTAR: '2022-01-01T00:00:00.000Z'
+                        BANFISHESADI: İŞ BANKASI MALTEPE
+                        BANFISBORCTOP: 0
+                        BANFISALACAKTOP: 33139.81
+                      - BANFISTAR: '2022-01-01T00:00:00.000Z'
+                        BANFISHESADI: AKBANK-İKİTELLİ OSB ŞUBESİ
+                        BANFISBORCTOP: 0
+                        BANFISALACAKTOP: 15699.37
+                  recordset:
+                    - BANFISTAR: '2022-01-01T00:00:00.000Z'
+                      BANFISHESADI: İŞ BANKASI MALTEPE
+                      BANFISBORCTOP: 0
+                      BANFISALACAKTOP: 33139.81
+                    - BANFISTAR: '2022-01-01T00:00:00.000Z'
+                      BANFISHESADI: AKBANK-İKİTELLİ OSB ŞUBESİ
+                      BANFISBORCTOP: 0
+                      BANFISALACAKTOP: 15699.37
+                  output: {}
+                  rowsAffected:
+                    - 2
+  /mysql:
+    post:
+      tags:
+        - SQL
+      summary: mysql
+      description: |-
+        Control `MySQL Server` via ConnectorJS Client.
+
+        For more information, look at https://www.npmjs.com/package/mysql
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                config:
+                  host: localhost
+                  user: root
+                  port: 3306
+                  password: '{{mysql_password}}'
+                  database: '{{mysql_database}}'
+                query: SELECT * FROM table_help
+      parameters:
+        - name: clientId
+          in: header
+          schema:
+            type: string
+          example: '{{client_id}}'
+        - name: clientPass
+          in: header
+          schema:
+            type: string
+          example: '{{client_pass}}'
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Vary:
+              schema:
+                type: string
+                example: X-HTTP-Method-Override
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '477'
+            ETag:
+              schema:
+                type: string
+                example: W/"1dd-LTaKVNPDHbac0O5AM91AcpD4fps"
+            Date:
+              schema:
+                type: string
+                example: Mon, 27 Feb 2023 19:50:52 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                success: true
+                data:
+                  - table_help_id: 0
+                    name: HELP_DATE
+                    help_category_id: 1
+                    description: >
+                      This help information was generated from the MySQL 5.7
+                      Reference Manual on: 2021-09-06
+                  - table_help_id: 1
+                    name: HELP_VERSION
+                    help_category_id: 1
+                    description: |
+                      This information applies to MySQL 5.7 through 5.7.35.
+                  - table_help_id: 2
+                    name: AUTO_INCREMENT
+                    help_category_id: 2
+                    description: >-
+                      The AUTO_INCREMENT attribute can be used to generate a
+                      unique identity
+  /pg:
+    post:
+      tags:
+        - SQL
+      summary: pg
+      description: |-
+        Control `PostgreSQL Server` via ConnectorJS Client.
+
+        For more information, look at https://www.npmjs.com/package/pg
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                config:
+                  user: postgres
+                  host: localhost
+                  database: '{{pg_database}}'
+                  password: '{{pg_password}}'
+                  port: 5432
+                query: SELECT * FROM table1
+      parameters:
+        - name: clientId
+          in: header
+          schema:
+            type: string
+          example: '{{client_id}}'
+        - name: clientPass
+          in: header
+          schema:
+            type: string
+          example: '{{client_pass}}'
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Vary:
+              schema:
+                type: string
+                example: X-HTTP-Method-Override
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '1505'
+            ETag:
+              schema:
+                type: string
+                example: W/"5e1-Pc7Yl7jNcfwM+oV9LUIjnqn9u2o"
+            Date:
+              schema:
+                type: string
+                example: Mon, 27 Feb 2023 19:53:57 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                success: true
+                data:
+                  command: SELECT
+                  rowCount: 2
+                  oid: null
+                  rows:
+                    - id: 1
+                      name: John
+                      lastName: Doe
+                    - id: 2
+                      name: Jean-Luc
+                      lastName: Picard
+                  fields:
+                    - name: id
+                      tableID: 24591
+                      columnID: 1
+                      dataTypeID: 23
+                      dataTypeSize: 4
+                      dataTypeModifier: -1
+                      format: text
+                    - name: name
+                      tableID: 24591
+                      columnID: 2
+                      dataTypeID: 1043
+                      dataTypeSize: -1
+                      dataTypeModifier: 54
+                      format: text
+                    - name: lastName
+                      tableID: 24591
+                      columnID: 3
+                      dataTypeID: 1043
+                      dataTypeSize: -1
+                      dataTypeModifier: 54
+                      format: text
+                  _parsers:
+                    - null
+                    - null
+                    - null
+                  RowCtor: null
+                  rowAsArray: false
+  /read-file:
+    post:
+      tags:
+        - File System
+      summary: read-file
+      description: Read a file on computer which installed ConnectorJS Client.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                filePath: C:\temp\read-file-test.txt
+                encoding: base64
+      parameters:
+        - name: clientId
+          in: header
+          schema:
+            type: string
+          example: '{{client_id}}'
+        - name: clientPass
+          in: header
+          schema:
+            type: string
+          example: '{{client_pass}}'
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Vary:
+              schema:
+                type: string
+                example: X-HTTP-Method-Override
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '122'
+            ETag:
+              schema:
+                type: string
+                example: W/"7a-oNHeVDU5rkPvlNdWzvunVxr65VY"
+            Date:
+              schema:
+                type: string
+                example: Mon, 27 Feb 2023 20:44:34 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                success: true
+                data: >-
+                  SGVsbG93IHdvcmRsISDEnsSew7zDvCDFnw0KVGhpcyBpcyB1dDggZG9jdW1lbnQuIA0Kw7bDtsOWw6cNCnRoZS1lbmQNCg==
+  /write-file:
+    post:
+      tags:
+        - File System
+      summary: write-file
+      description: Write data to a file on computer which installed ConnectorJS Client.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                filePath: C:/arge/temp/deneme${(new Date()).yyyymmdd()}.txt
+                data: |-
+                  merhaba şĞiidfdf
+                  deneme1234
+      parameters:
+        - name: clientId
+          in: header
+          schema:
+            type: string
+          example: '{{client_id}}'
+        - name: clientPass
+          in: header
+          schema:
+            type: string
+          example: '{{client_pass}}'
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Vary:
+              schema:
+                type: string
+                example: X-HTTP-Method-Override
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '59'
+            ETag:
+              schema:
+                type: string
+                example: W/"3b-mIURcxqSDaycWcjhGVRc97qGNQY"
+            Date:
+              schema:
+                type: string
+                example: Mon, 27 Feb 2023 20:46:31 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                success: true
+                data: C:/arge/temp/deneme2023-02-27.txt
+  /read-excel:
+    post:
+      tags:
+        - Excel
+      summary: read-excel
+      description: Read an excel file on computer which installed ConnectorJS Client.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                filePath: C:/arge/temp/test01.xlsx
+      parameters:
+        - name: clientId
+          in: header
+          schema:
+            type: string
+          example: '{{client_id}}'
+        - name: clientPass
+          in: header
+          schema:
+            type: string
+          example: '{{client_pass}}'
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Vary:
+              schema:
+                type: string
+                example: X-HTTP-Method-Override
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '74'
+            ETag:
+              schema:
+                type: string
+                example: W/"4a-nZDhcDvnpe4XT2MHudq6OjPZgB8"
+            Date:
+              schema:
+                type: string
+                example: Mon, 27 Feb 2023 20:51:37 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                success: true
+                data:
+                  Sheet1:
+                    - - technoShaman
+                      - 2023
+                    - - istanbul
+                      - 34
+  /write-excel:
+    post:
+      tags:
+        - Excel
+      summary: write-excel
+      description: >-
+        Write array data to excel (xlsx) on computer which installed ConnectorJS
+        Client.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                data:
+                  - - value: technoShaman
+                    - value: 2023
+                  - - value: istanbul
+                    - value: 34
+                filePath: C:/arge/temp/test01.xlsx
+      parameters:
+        - name: clientId
+          in: header
+          schema:
+            type: string
+          example: '{{client_id}}'
+        - name: clientPass
+          in: header
+          schema:
+            type: string
+          example: '{{client_pass}}'
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Vary:
+              schema:
+                type: string
+                example: X-HTTP-Method-Override
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '50'
+            ETag:
+              schema:
+                type: string
+                example: W/"32-VjSc49h6U7vmQqWjA5aVWR/gdSk"
+            Date:
+              schema:
+                type: string
+                example: Mon, 27 Feb 2023 20:49:21 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                success: true
+                data: C:/arge/temp/test01.xlsx

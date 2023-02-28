@@ -8,19 +8,20 @@
 [![](https://img.shields.io/badge/%F0%9F%8C%90%20Powered_by-miajupiter.com-blueviolet?style=flat&labelColor=%23323232)](https://miajupiter.com) ![GitHub followers](https://img.shields.io/github/followers/miajupiter?label=MiaJupiter&logo=github)
 
 
-# ConnectorJS Server
+# ConnectorJS
+
+[![](https://img.shields.io/badge/ConnectorJS%20Client%20API-Docs-chocolate?style=flat&logo=openapiinitiative&color=yellow)](https://docs.connectorjs.com/connector)
 
 Remote connector service. Client Connector provides you processing data from your server or computer via Rest service.
 
 ## Table of contents
-
 - [Client Connector](#client-connector)
 - [Supported Data Systems](#supported-data-systems)
 - [Download & Install](#download--install)
 - [clientId & clientPass](#clientid--clientpass)
 - [Structure](#structure)
+- [ConnectorJS Client API](#connectorjs-client-api)
 - [License - MIT License](#license---mit-license)
-
 
 ## Client Connector
 Download & install this connector to reach to your pc/server over ConnectorJS Restful Services.
@@ -89,6 +90,10 @@ ra
 end
 
 ```
+
+## ConnectorJS Client API
+
+[ConnectorJS Client API Documentation](https://docs.connectorjs.com/connector/)
 
 
 ## License - MIT License

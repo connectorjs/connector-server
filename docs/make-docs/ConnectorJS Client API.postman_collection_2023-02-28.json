@@ -1,0 +1,1118 @@
+{
+	"info": {
+		"_postman_id": "c43960c1-2f85-4a33-b51d-aba741a97896",
+		"name": "ConnectorJS Client API",
+		"description": "## Introduction\nDownload & install this connector to reach to your pc/server over ConnectorJS Restful Services.\n\n## Supported Data Systems\n- SQL Server\n- MySQL\n- PostgreSQL\n- Excel\n- File System\n- Linux Shell\n- Windows Command Prompt\n\n## Download & Install\nDownload [ClientConnector (for Windows)](https://github.com/connectorjs/connector-server) client connector application.\nUnpack zip file and run `connectorjs_setup.exe`\n\nSetup needs administration privileges to install properly.\n\n## clientId & clientPass\nWhen the connector runs first time, it takes new id and password from ConnectorJS Server. You need them for authentication.\n\n\n## Structure\n\n![](https://github.com/connectorjs/connector-server/raw/main/docs/clientconnector-structure.svg)\n\nContinue",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "350229"
+	},
+	"item": [
+		{
+			"name": "General",
+			"item": [
+				{
+					"name": "datetime",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "clientId",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "clientPass",
+								"value": "{{client_pass}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server_uri}}/datetime",
+							"host": [
+								"{{server_uri}}"
+							],
+							"path": [
+								"datetime"
+							]
+						},
+						"description": "Get date & time (UTC) from ConnectorJS Client"
+					},
+					"response": [
+						{
+							"name": "datetime",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "clientId",
+										"value": "•••••••",
+										"type": "text"
+									},
+									{
+										"key": "clientPass",
+										"value": "•••••••",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.connectorjs.com/connector/datetime",
+									"protocol": "https",
+									"host": [
+										"api",
+										"connectorjs",
+										"com"
+									],
+									"path": [
+										"connector",
+										"datetime"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "X-HTTP-Method-Override"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"32-I4hWVAMBw6c+nkITVx39fBXPE8Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Feb 2023 20:16:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": \"2023-02-27T20:16:00.528Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "cmd",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "clientId",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "clientPass",
+								"value": "{{client_pass}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"command\": \"dir C:\\\\\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_uri}}/cmd",
+							"host": [
+								"{{server_uri}}"
+							],
+							"path": [
+								"cmd"
+							]
+						},
+						"description": "Run terminal commands on computer which installed ConnectorJS Client.\n\nSupported OS:\n- Win32\n- MacOS\n- Linux"
+					},
+					"response": [
+						{
+							"name": "cmd",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "clientId",
+										"value": "•••••••",
+										"type": "text"
+									},
+									{
+										"key": "clientPass",
+										"value": "•••••••",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"command\": \"dir C:\\\\\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.connectorjs.com/connector/cmd",
+									"protocol": "https",
+									"host": [
+										"api",
+										"connectorjs",
+										"com"
+									],
+									"path": [
+										"connector",
+										"cmd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "X-HTTP-Method-Override"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1212"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4bc-pR+9DaSyVHH1c1qNQLUdDvsYxbY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Feb 2023 20:21:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": \" Volume in drive C has no label.\\r\\n Volume Serial Number is A4EE-0827\\r\\n\\r\\n Directory of C:\\\\\\r\\n\\r\\n02/21/2023  04:03 PM    <DIR>          appsdocs\\r\\n10/19/2022  07:52 PM           112,104 appverifUI.dll\\r\\n02/21/2023  04:04 PM    <DIR>          arge\\r\\n07/14/2022  07:26 PM    <DIR>          gradle-7.5\\r\\n01/07/2023  12:19 AM    <DIR>          inetpub\\r\\n02/23/2023  06:10 AM    <DIR>          Intel\\r\\n04/28/2022  08:49 PM    <DIR>          mongoDatabases\\r\\n02/27/2023  10:50 PM    <DIR>          portable_programs\\r\\n02/21/2023  04:14 PM    <DIR>          Program Files\\r\\n12/18/2022  03:21 PM    <DIR>          Program Files (x86)\\r\\n04/28/2022  09:20 PM    <DIR>          SQLData\\r\\n12/05/2022  11:54 AM    <DIR>          src\\r\\n02/27/2023  08:31 PM    <DIR>          temp\\r\\n02/04/2023  04:01 AM    <DIR>          Users\\r\\n05/30/2022  11:37 AM    <DIR>          Uyap\\r\\n10/19/2022  07:52 PM            66,176 vfcompat.dll\\r\\n01/01/2023  08:42 PM    <DIR>          vm\\r\\n07/07/2022  05:37 PM    <DIR>          wamp64\\r\\n02/22/2023  08:12 AM    <DIR>          Windows\\r\\n               2 File(s)        178,280 bytes\\r\\n              17 Dir(s)  144,244,936,704 bytes free\\r\\n\"\n}"
+						}
+					]
+				}
+			],
+			"description": "General"
+		},
+		{
+			"name": "SQL",
+			"item": [
+				{
+					"name": "mssql",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "clientId",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "clientPass",
+								"value": "{{client_pass}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"config\": {\r\n        \"user\": \"sa\",\r\n        \"password\": \"{{mssql_password}}\",\r\n        \"database\": \"{{mssql_database}}\",\r\n        \"server\": \"localhost\",\r\n        \"port\": 1434,\r\n        \"dialect\": \"mssql\",\r\n        \"dialectOptions\": {\r\n            \"instanceName\": \"SQL2019\"\r\n        },\r\n        \"options\": {\r\n            \"encrypt\": false,\r\n            \"trustServerCertificate\": false\r\n        }\r\n    },\r\n    \"query\": \"SELECT TOP (2) [BANFISTAR],[BANFISHESADI],[BANFISBORCTOP],[BANFISALACAKTOP] FROM [BANKAFIS]\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_uri}}/mssql",
+							"host": [
+								"{{server_uri}}"
+							],
+							"path": [
+								"mssql"
+							]
+						},
+						"description": "Control `MS SQL Server` via ConnectorJS Client.\n\nFor more information, look at https://www.npmjs.com/package/mssql"
+					},
+					"response": [
+						{
+							"name": "mssql",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "clientId",
+										"value": "{{client_id}}",
+										"type": "text"
+									},
+									{
+										"key": "clientPass",
+										"value": "{{client_pass}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"config\": {\r\n        \"user\": \"sa\",\r\n        \"password\": \"{{mssql_password}}\",\r\n        \"database\": \"{{mssql_database}}\",\r\n        \"server\": \"localhost\",\r\n        \"port\": 1434,\r\n        \"dialect\": \"mssql\",\r\n        \"dialectOptions\": {\r\n            \"instanceName\": \"SQLExpress\"\r\n        },\r\n        \"options\": {\r\n            \"encrypt\": false,\r\n            \"trustServerCertificate\": false\r\n        }\r\n    },\r\n    \"query\": \"SELECT TOP (2) [BANFISTAR],[BANFISHESADI],[BANFISBORCTOP],[BANFISALACAKTOP] FROM [BANKAFIS]\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_uri}}/mssql",
+									"host": [
+										"{{server_uri}}"
+									],
+									"path": [
+										"mssql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "X-HTTP-Method-Override"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "605"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25d-yeBAzEhJckSiSeRrZ3ObIxgvGHw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Feb 2023 19:52:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"recordsets\": [\n            [\n                {\n                    \"BANFISTAR\": \"2022-01-01T00:00:00.000Z\",\n                    \"BANFISHESADI\": \"İŞ BANKASI MALTEPE\",\n                    \"BANFISBORCTOP\": 0,\n                    \"BANFISALACAKTOP\": 33139.81\n                },\n                {\n                    \"BANFISTAR\": \"2022-01-01T00:00:00.000Z\",\n                    \"BANFISHESADI\": \"AKBANK-İKİTELLİ OSB ŞUBESİ\",\n                    \"BANFISBORCTOP\": 0,\n                    \"BANFISALACAKTOP\": 15699.37\n                }\n            ]\n        ],\n        \"recordset\": [\n            {\n                \"BANFISTAR\": \"2022-01-01T00:00:00.000Z\",\n                \"BANFISHESADI\": \"İŞ BANKASI MALTEPE\",\n                \"BANFISBORCTOP\": 0,\n                \"BANFISALACAKTOP\": 33139.81\n            },\n            {\n                \"BANFISTAR\": \"2022-01-01T00:00:00.000Z\",\n                \"BANFISHESADI\": \"AKBANK-İKİTELLİ OSB ŞUBESİ\",\n                \"BANFISBORCTOP\": 0,\n                \"BANFISALACAKTOP\": 15699.37\n            }\n        ],\n        \"output\": {},\n        \"rowsAffected\": [\n            2\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "mysql",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "clientId",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "clientPass",
+								"value": "{{client_pass}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"config\": {\r\n        \"host\": \"localhost\",\r\n        \"user\": \"root\",\r\n\t\t\"port\":3306,\r\n        \"password\": \"{{mysql_password}}\",\r\n        \"database\": \"{{mysql_database}}\"\r\n    },\r\n    \"query\": \"SELECT * FROM table_help\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_uri}}/mysql",
+							"host": [
+								"{{server_uri}}"
+							],
+							"path": [
+								"mysql"
+							]
+						},
+						"description": "Control `MySQL Server` via ConnectorJS Client.\n\nFor more information, look at https://www.npmjs.com/package/mysql"
+					},
+					"response": [
+						{
+							"name": "mysql",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "clientId",
+										"value": "{{client_id}}",
+										"type": "text"
+									},
+									{
+										"key": "clientPass",
+										"value": "{{client_pass}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"config\": {\r\n        \"host\": \"localhost\",\r\n        \"user\": \"root\",\r\n\t\t\"port\":3306,\r\n        \"password\": \"{{mysql_password}}\",\r\n        \"database\": \"{{mysql_database}}\"\r\n    },\r\n    \"query\": \"SELECT * FROM table_help\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_uri}}/mysql",
+									"host": [
+										"{{server_uri}}"
+									],
+									"path": [
+										"mysql"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "X-HTTP-Method-Override"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "477"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1dd-LTaKVNPDHbac0O5AM91AcpD4fps\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Feb 2023 19:50:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"table_help_id\": 0,\n            \"name\": \"HELP_DATE\",\n            \"help_category_id\": 1,\n            \"description\": \"This help information was generated from the MySQL 5.7 Reference Manual on: 2021-09-06\\n\"\n        },\n        {\n            \"table_help_id\": 1,\n            \"name\": \"HELP_VERSION\",\n            \"help_category_id\": 1,\n            \"description\": \"This information applies to MySQL 5.7 through 5.7.35.\\n\"\n        },\n        {\n            \"table_help_id\": 2,\n            \"name\": \"AUTO_INCREMENT\",\n            \"help_category_id\": 2,\n            \"description\": \"The AUTO_INCREMENT attribute can be used to generate a unique identity\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "pg",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "clientId",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "clientPass",
+								"value": "{{client_pass}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"config\": {\r\n        \"user\": \"postgres\",\r\n        \"host\": \"localhost\",\r\n        \"database\": \"{{pg_database}}\",\r\n        \"password\": \"{{pg_password}}\",\r\n        \"port\": 5432\r\n    },\r\n    \"query\": \"SELECT * FROM table1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_uri}}/pg",
+							"host": [
+								"{{server_uri}}"
+							],
+							"path": [
+								"pg"
+							]
+						},
+						"description": "Control `PostgreSQL Server` via ConnectorJS Client.\n\nFor more information, look at https://www.npmjs.com/package/pg"
+					},
+					"response": [
+						{
+							"name": "pg",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "clientId",
+										"value": "{{client_id}}",
+										"type": "text"
+									},
+									{
+										"key": "clientPass",
+										"value": "{{client_pass}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"config\": {\r\n        \"user\": \"postgres\",\r\n        \"host\": \"localhost\",\r\n        \"database\": \"{{pg_database}}\",\r\n        \"password\": \"{{pg_password}}\",\r\n        \"port\": 5432\r\n    },\r\n    \"query\": \"SELECT * FROM table1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_uri}}/pg",
+									"host": [
+										"{{server_uri}}"
+									],
+									"path": [
+										"pg"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "X-HTTP-Method-Override"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1505"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5e1-Pc7Yl7jNcfwM+oV9LUIjnqn9u2o\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Feb 2023 19:53:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"command\": \"SELECT\",\n        \"rowCount\": 2,\n        \"oid\": null,\n        \"rows\": [\n            {\n                \"id\": 1,\n                \"name\": \"John\",\n                \"lastName\": \"Doe\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Jean-Luc\",\n                \"lastName\": \"Picard\"\n            }\n        ],\n        \"fields\": [\n            {\n                \"name\": \"id\",\n                \"tableID\": 24591,\n                \"columnID\": 1,\n                \"dataTypeID\": 23,\n                \"dataTypeSize\": 4,\n                \"dataTypeModifier\": -1,\n                \"format\": \"text\"\n            },\n            {\n                \"name\": \"name\",\n                \"tableID\": 24591,\n                \"columnID\": 2,\n                \"dataTypeID\": 1043,\n                \"dataTypeSize\": -1,\n                \"dataTypeModifier\": 54,\n                \"format\": \"text\"\n            },\n            {\n                \"name\": \"lastName\",\n                \"tableID\": 24591,\n                \"columnID\": 3,\n                \"dataTypeID\": 1043,\n                \"dataTypeSize\": -1,\n                \"dataTypeModifier\": 54,\n                \"format\": \"text\"\n            }\n        ],\n        \"_parsers\": [\n            null,\n            null,\n            null\n        ],\n        \"RowCtor\": null,\n        \"rowAsArray\": false\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "SQL"
+		},
+		{
+			"name": "File System",
+			"item": [
+				{
+					"name": "read-file",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "clientId",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "clientPass",
+								"value": "{{client_pass}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filePath\": \"C:\\\\temp\\\\read-file-test.txt\",\r\n    \"encoding\":\"base64\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_uri}}/read-file",
+							"host": [
+								"{{server_uri}}"
+							],
+							"path": [
+								"read-file"
+							]
+						},
+						"description": "Read a file on computer which installed ConnectorJS Client."
+					},
+					"response": [
+						{
+							"name": "read-file",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "clientId",
+										"value": "{{client_id}}",
+										"type": "text"
+									},
+									{
+										"key": "clientPass",
+										"value": "{{client_pass}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"filePath\": \"C:\\\\temp\\\\read-file-test.txt\",\r\n    \"encoding\":\"base64\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_uri}}/read-file",
+									"host": [
+										"{{server_uri}}"
+									],
+									"path": [
+										"read-file"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "X-HTTP-Method-Override"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "122"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7a-oNHeVDU5rkPvlNdWzvunVxr65VY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Feb 2023 20:44:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": \"SGVsbG93IHdvcmRsISDEnsSew7zDvCDFnw0KVGhpcyBpcyB1dDggZG9jdW1lbnQuIA0Kw7bDtsOWw6cNCnRoZS1lbmQNCg==\"\n}"
+						}
+					]
+				},
+				{
+					"name": "write-file",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "clientId",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "clientPass",
+								"value": "{{client_pass}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filePath\": \"C:/arge/temp/deneme${(new Date()).yyyymmdd()}.txt\",\r\n    \"data\":\"merhaba şĞiidfdf\\ndeneme1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_uri}}/write-file",
+							"host": [
+								"{{server_uri}}"
+							],
+							"path": [
+								"write-file"
+							]
+						},
+						"description": "Write data to a file on computer which installed ConnectorJS Client."
+					},
+					"response": [
+						{
+							"name": "write-file",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "clientId",
+										"value": "{{client_id}}",
+										"type": "text"
+									},
+									{
+										"key": "clientPass",
+										"value": "{{client_pass}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"filePath\": \"C:/arge/temp/deneme${(new Date()).yyyymmdd()}.txt\",\r\n    \"data\":\"merhaba şĞiidfdf\\ndeneme1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_uri}}/write-file",
+									"host": [
+										"{{server_uri}}"
+									],
+									"path": [
+										"write-file"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "X-HTTP-Method-Override"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-mIURcxqSDaycWcjhGVRc97qGNQY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Feb 2023 20:46:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": \"C:/arge/temp/deneme2023-02-27.txt\"\n}"
+						}
+					]
+				}
+			],
+			"description": "File System"
+		},
+		{
+			"name": "Excel",
+			"item": [
+				{
+					"name": "read-excel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "clientId",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "clientPass",
+								"value": "{{client_pass}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filePath\": \"C:/arge/temp/test01.xlsx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_uri}}/read-excel",
+							"host": [
+								"{{server_uri}}"
+							],
+							"path": [
+								"read-excel"
+							]
+						},
+						"description": "Read an excel file on computer which installed ConnectorJS Client."
+					},
+					"response": [
+						{
+							"name": "read-excel",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "clientId",
+										"value": "{{client_id}}",
+										"type": "text"
+									},
+									{
+										"key": "clientPass",
+										"value": "{{client_pass}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"filePath\": \"C:/arge/temp/test01.xlsx\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_uri}}/read-excel",
+									"host": [
+										"{{server_uri}}"
+									],
+									"path": [
+										"read-excel"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "X-HTTP-Method-Override"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "74"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4a-nZDhcDvnpe4XT2MHudq6OjPZgB8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Feb 2023 20:51:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"Sheet1\": [\n            [\n                \"technoShaman\",\n                2023\n            ],\n            [\n                \"istanbul\",\n                34\n            ]\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "write-excel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "clientId",
+								"value": "{{client_id}}",
+								"type": "text"
+							},
+							{
+								"key": "clientPass",
+								"value": "{{client_pass}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": [\r\n        [\r\n            {\r\n                \"value\": \"technoShaman\"\r\n            },\r\n            {\r\n                \"value\": 2023\r\n            }\r\n        ],\r\n        [\r\n            {\r\n                \"value\": \"istanbul\"\r\n            },\r\n            {\r\n                \"value\": 34\r\n            }\r\n        ]\r\n    ],\r\n    \"filePath\": \"C:/arge/temp/test01.xlsx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_uri}}/write-excel",
+							"host": [
+								"{{server_uri}}"
+							],
+							"path": [
+								"write-excel"
+							]
+						},
+						"description": "Write array data to excel (xlsx) on computer which installed ConnectorJS Client."
+					},
+					"response": [
+						{
+							"name": "write-excel",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "clientId",
+										"value": "{{client_id}}",
+										"type": "text"
+									},
+									{
+										"key": "clientPass",
+										"value": "{{client_pass}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"data\": [\r\n        [\r\n            {\r\n                \"value\": \"technoShaman\"\r\n            },\r\n            {\r\n                \"value\": 2023\r\n            }\r\n        ],\r\n        [\r\n            {\r\n                \"value\": \"istanbul\"\r\n            },\r\n            {\r\n                \"value\": 34\r\n            }\r\n        ]\r\n    ],\r\n    \"filePath\": \"C:/arge/temp/test01.xlsx\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server_uri}}/write-excel",
+									"host": [
+										"{{server_uri}}"
+									],
+									"path": [
+										"write-excel"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "X-HTTP-Method-Override"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"32-VjSc49h6U7vmQqWjA5aVWR/gdSk\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Feb 2023 20:49:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": \"C:/arge/temp/test01.xlsx\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Excel"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

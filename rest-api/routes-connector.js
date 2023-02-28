@@ -3,10 +3,10 @@ const spamCheck = require(path.join(__root, '/lib/spamdetector'))
 module.exports = (app) => new Promise((resolve, reject) => {
 
   // const moduleHolder = await util.moduleLoader(path.join(__dirname, '/connector-controllers'), '.controller.js')
-  app.all('/api/connector/v1', function (req, res) {
-    res.status(200).json({ success: true, data: 'Welcome to connector rest api. Usage: /api/connector/v1/:func/[:param1]/[:param2]/[:param3] Methods: GET, POST, PUT, DELETE ' })
+  app.all('/connector', function (req, res) {
+    res.status(200).json({ success: true, data: 'Welcome to connector rest api. Usage: /connector/:func/[:param1]/[:param2]/[:param3] Methods: GET, POST, PUT, DELETE ' })
   })
-  clientControllers(app, '/api/connector/v1/:func/:param1/:param2/:param3')
+  clientControllers(app, '/connector/:func/:param1/:param2/:param3')
 
   resolve()
 })

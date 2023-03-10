@@ -23,7 +23,8 @@ module.exports = () => new Promise((resolve, reject) => {
   app.use(methodOverride())
 
 
-  app.use('/', express.static(path.join(__root, 'public')))
+  // app.use('/', express.static(path.join(__root, 'public')))
+  app.use('/docs', express.static(path.join(__root, 'docs')))
 
   // testControllers(true)
   // .then(() => {

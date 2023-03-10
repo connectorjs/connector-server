@@ -2,6 +2,10 @@
 module.exports =async (app) => {
 
   let apiWelcomeMessage = { message: `Welcome to ${require(path.join(__root, 'package.json')).name || ''} API V1. Usage: /api/v1/:func/[:param1]/[:param2]/[:param3] . Methods: GET, POST, PUT, DELETE ` }
+
+  app.all('/*', function (req, res,next) {
+    next()
+  })
   app.all('/api', function (req, res) {
     res.status(200).json({ success: true, data: apiWelcomeMessage })
   })

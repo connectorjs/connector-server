@@ -1,5 +1,5 @@
 var createError = require('http-errors')
-var express = require('express')
+global.express = require('express')
 var bodyParser = require('body-parser')
 var logger = require('morgan')
 
@@ -24,7 +24,7 @@ module.exports = () => new Promise((resolve, reject) => {
 
 
   // app.use('/', express.static(path.join(__root, 'public')))
-  app.use('/docs', express.static(path.join(__root, 'docs')))
+  //app.use('/docs', express.static(path.join(__root, 'docs')))
 
   // testControllers(true)
   // .then(() => {

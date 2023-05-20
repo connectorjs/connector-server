@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: ConnectorJS Client API
+  title: Client Connector API
   description: >-
     ## Introduction
 
@@ -28,8 +28,8 @@ info:
     ## Download & Install
 
     Download [ClientConnector (for
-    Windows)](https://github.com/connectorjs/connector-server) client connector
-    application.
+    Windows)](https://github.com/connectorjs/connector-server/releases) client
+    connector application.
 
     Unpack zip file and run `connectorjs_setup.exe`
 
@@ -53,8 +53,7 @@ info:
     Continue
   version: ''
   x-logo:
-    url: >-
-      https://raw.githubusercontent.com/connectorjs/.github/main/images/connectorjs-logo.png
+    url: https://raw.githubusercontent.com/connectorjs/.github/main/images/logo.png
     altText: logo
     href: https://connectorjs.com
   contact:
@@ -65,7 +64,7 @@ info:
     name: MIT
     url: https://choosealicense.com/licenses/mit
 servers:
-  - url: https://api.connectorjs.com/connector
+  - url: https://api.connectorjs.com/connector/api/v1
 tags:
   - name: General
     description: General
@@ -123,7 +122,7 @@ paths:
             schema:
               type: object
               example:
-                command: dir C:\
+                command: ls -l /var
       parameters:
         - name: clientId
           in: header

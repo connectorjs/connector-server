@@ -8,15 +8,12 @@ module.exports = (connector, params, req) => new Promise((resolve, reject) => {
   obj.callback=callback
 
 	connector.socket.callbackList[callback] = (result) => {
-    console.log('socket callbackList length A:', Object.keys(connector.socket.callbackList))
-    console.log(`callback calisti `, callback , ' result:', result )
 		delete connector.socket.callbackList[callback]
     if (result.success)
 			resolve(result.data)
 		else
 			reject(result.error)
 
-    console.log('socket callbackList length B:', Object.keys(connector.socket.callbackList))
 	}
 
   

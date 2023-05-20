@@ -2,7 +2,7 @@
   "info": {
     "version": "",
     "xLogo":{
-      "url":"https://raw.githubusercontent.com/connectorjs/.github/main/images/connectorjs-logo.png", 
+      "url":"https://raw.githubusercontent.com/connectorjs/.github/main/images/logo.png", 
       "11backgroundColor":"#2323A0", 
       "altText":"logo",
       "href":"https://connectorjs.com"
@@ -21,7 +21,7 @@
   "pathDepth": 0,
   "servers": [
     {
-      "url": "https://api.connectorjs.com/connector"
+      "url": "https://api.connectorjs.com/connector/api/v1"
     }
   ],
   "externalDocs": {},

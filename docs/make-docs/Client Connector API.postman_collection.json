@@ -1,10 +1,11 @@
 {
 	"info": {
 		"_postman_id": "c43960c1-2f85-4a33-b51d-aba741a97896",
-		"name": "ConnectorJS Client API",
-		"description": "## Introduction\nDownload & install this connector to reach to your pc/server over ConnectorJS Restful Services.\n\n## Supported Data Systems\n- SQL Server\n- MySQL\n- PostgreSQL\n- Excel\n- File System\n- Linux Shell\n- Windows Command Prompt\n\n## Download & Install\nDownload [ClientConnector (for Windows)](https://github.com/connectorjs/connector-server) client connector application.\nUnpack zip file and run `connectorjs_setup.exe`\n\nSetup needs administration privileges to install properly.\n\n## clientId & clientPass\nWhen the connector runs first time, it takes new id and password from ConnectorJS Server. You need them for authentication.\n\n\n## Structure\n\n![](https://github.com/connectorjs/connector-server/raw/main/docs/clientconnector-structure.svg)\n\nContinue",
+		"name": "Client Connector API",
+		"description": "## Introduction\nDownload & install this connector to reach to your pc/server over ConnectorJS Restful Services.\n\n## Supported Data Systems\n- SQL Server\n- MySQL\n- PostgreSQL\n- Excel\n- File System\n- Linux Shell\n- Windows Command Prompt\n\n## Download & Install\nDownload [ClientConnector (for Windows)](https://github.com/connectorjs/connector-server/releases) client connector application.\nUnpack zip file and run `connectorjs_setup.exe`\n\nSetup needs administration privileges to install properly.\n\n## clientId & clientPass\nWhen the connector runs first time, it takes new id and password from ConnectorJS Server. You need them for authentication.\n\n\n## Structure\n\n![](https://github.com/connectorjs/connector-server/raw/main/docs/clientconnector-structure.svg)\n\nContinue",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "350229"
+		"_exporter_id": "350229",
+		"_collection_link": "https://www.postman.com/blue-escape-873251/workspace/connectorjs/collection/350229-c43960c1-2f85-4a33-b51d-aba741a97896?action=share&creator=350229&source=collection_link"
 	},
 	"item": [
 		{
@@ -45,25 +46,21 @@
 								"header": [
 									{
 										"key": "clientId",
-										"value": "•••••••",
+										"value": "{{client_id}}",
 										"type": "text"
 									},
 									{
 										"key": "clientPass",
-										"value": "•••••••",
+										"value": "{{client_pass}}",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "https://api.connectorjs.com/connector/datetime",
-									"protocol": "https",
+									"raw": "{{server_uri}}/datetime",
 									"host": [
-										"api",
-										"connectorjs",
-										"com"
+										"{{server_uri}}"
 									],
 									"path": [
-										"connector",
 										"datetime"
 									]
 								}
@@ -132,7 +129,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"command\": \"dir C:\\\\\"\r\n}",
+							"raw": "{\r\n    \"command\": \"ls -l /var\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -158,12 +155,12 @@
 								"header": [
 									{
 										"key": "clientId",
-										"value": "•••••••",
+										"value": "{{client_id}}",
 										"type": "text"
 									},
 									{
 										"key": "clientPass",
-										"value": "•••••••",
+										"value": "{{client_pass}}",
 										"type": "text"
 									}
 								],
@@ -177,15 +174,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://api.connectorjs.com/connector/cmd",
-									"protocol": "https",
+									"raw": "{{server_uri}}/cmd",
 									"host": [
-										"api",
-										"connectorjs",
-										"com"
+										"{{server_uri}}"
 									],
 									"path": [
-										"connector",
 										"cmd"
 									]
 								}

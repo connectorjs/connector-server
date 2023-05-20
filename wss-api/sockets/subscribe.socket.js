@@ -1,5 +1,4 @@
 module.exports = async (socket, data) => {
-  console.log(__filename, data)
   try {
     let connDoc = await db.connectors.findOne({ clientId: data.clientId, clientPass: data.clientPass })
     if (connDoc == null) {
